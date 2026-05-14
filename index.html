@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Upskill Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero-panel">
+      <div>
+        <p class="eyebrow">3-Month Upskill Journey</p>
+        <h1>French + SAP Progress Dashboard</h1>
+        <p class="hero-copy">Designed for your international marketing master’s background and computer science strengths. Track daily study, exams, material, and skill insights in a soft pink and purple dashboard.</p>
+      </div>
+      <div class="status-chip">Start today: 30 min each skill, 10 min quiz</div>
+    </header>
+
+    <section class="overview-grid">
+      <article class="card highlight-card">
+        <h2>Overall Progress</h2>
+        <div class="progress-item">
+          <span>French track</span>
+          <div class="progress-bar"><div class="progress-fill" id="frenchProgress"></div></div>
+        </div>
+        <div class="progress-item">
+          <span>SAP track</span>
+          <div class="progress-bar"><div class="progress-fill" id="sapProgress"></div></div>
+        </div>
+        <div class="metric-grid">
+          <div class="metric-card"><strong id="completedTasks">0</strong><span>Tasks done</span></div>
+          <div class="metric-card"><strong id="deadlineCount">0</strong><span>Upcoming deadlines</span></div>
+          <div class="metric-card"><strong id="weakAreas">2</strong><span>Weak areas</span></div>
+        </div>
+      </article>
+
+      <article class="card schedule-card">
+        <h2>Today’s Plan</h2>
+        <ol class="task-list" id="todayTasks"></ol>
+      </article>
+
+      <article class="card advice-card">
+        <h2>Best fit for you</h2>
+        <p>Your combination of International Marketing and Computer Science means:</p>
+        <ul>
+          <li>French helps you thrive in Paris, improve client communication, and grow in global business roles.</li>
+          <li>SAP gives you a strong enterprise technology skill set used by international firms and marketing operations.</li>
+        </ul>
+        <p class="note">A blended path is ideal: keep French for daily communication and SAP for business systems expertise.</p>
+      </article>
+    </section>
+
+    <section class="skill-section" id="frenchSection">
+      <div class="section-header"><h2>French Skill Track</h2><span class="tag">Language + Culture</span></div>
+      <div class="skill-grid">
+        <article class="card">
+          <h3>Daily Lesson</h3>
+          <p>30 minutes of guided learning with real reference sources.</p>
+          <ul class="source-list">
+            <li><strong>Book:</strong> Practice Makes Perfect: Complete French Grammar</li>
+            <li><strong>Book:</strong> Easy French Step-by-Step</li>
+            <li><strong>Web:</strong> TV5Monde Immersion, Duolingo French Stories, FluentU French</li>
+          </ul>
+          <p class="lesson-text" id="frenchLesson"></p>
+        </article>
+
+        <article class="card">
+          <h3>10-Minute Quiz</h3>
+          <p>Mixed questions build reading, grammar and vocabulary.</p>
+          <button class="primary-button" onclick="showQuiz('french')">Open quiz</button>
+        </article>
+
+        <article class="card">
+          <h3>Weekly Exam</h3>
+          <p>30-minute performance check every 7 days.</p>
+          <button class="secondary-button" onclick="showWeeklyExam('french')">Start weekly exam</button>
+        </article>
+
+        <article class="card weakness-card">
+          <h3>Weakness Insight</h3>
+          <p id="frenchWeakness">Review vocabulary around travel and business conversation. Use mini flashcards with real dialogues.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="skill-section" id="sapSection">
+      <div class="section-header"><h2>SAP Skill Track</h2><span class="tag">Enterprise Systems</span></div>
+      <div class="skill-grid">
+        <article class="card">
+          <h3>Daily Lesson</h3>
+          <p>30 minutes of SAP concepts with trusted source references.</p>
+          <ul class="source-list">
+            <li><strong>Book:</strong> Discover SAP: A Business Transformation Guide</li>
+            <li><strong>Book:</strong> SAP ERP Financials: Configuration and Design</li>
+            <li><strong>Web:</strong> openSAP, SAP Help Portal, SAP Community Network</li>
+          </ul>
+          <p class="lesson-text" id="sapLesson"></p>
+        </article>
+
+        <article class="card">
+          <h3>10-Minute Quiz</h3>
+          <p>Use multiple-choice and scenario questions.</p>
+          <button class="primary-button" onclick="showQuiz('sap')">Open quiz</button>
+        </article>
+
+        <article class="card">
+          <h3>Weekly Exam</h3>
+          <p>30-minute weekly exam with business process analysis.</p>
+          <button class="secondary-button" onclick="showWeeklyExam('sap')">Start weekly exam</button>
+        </article>
+
+        <article class="card weakness-card">
+          <h3>Weakness Insight</h3>
+          <p id="sapWeakness">Review SAP process flow and module definitions. Practice using diagrams and step-by-step workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bot-panel">
+      <div class="bot-header"><h2>Study Bot</h2><p>Ask questions about French or SAP anytime.</p></div>
+      <div class="chat-shell">
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input-row">
+          <input type="text" id="botQuestion" placeholder="Ask the bot about French or SAP...">
+          <button onclick="sendBotQuestion()">Ask</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-button" onclick="closeModal()">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
